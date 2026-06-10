@@ -166,6 +166,7 @@ export async function createPayment(params: HyperswitchPaymentRequest) {
 
   if (params.paymentLink) {
     body.payment_link = true;
+    body.return_url = `${process.env.NEXT_PUBLIC_APP_URL || 'https://pay.newleaf.financial'}/portal?status=success`;
   }
 
   if (params.customerId) {

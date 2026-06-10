@@ -56,6 +56,11 @@ export default function LandingPage() {
                     Customer Portal
                   </Button>
                 </Link>
+                <Link href="/admin" className="block">
+                  <Button variant="secondary" size="lg" className="w-full h-14 text-base" style={{ background: "var(--bg-card)" }}>
+                    Admin Panel
+                  </Button>
+                </Link>
               </div>
             </div>
 
