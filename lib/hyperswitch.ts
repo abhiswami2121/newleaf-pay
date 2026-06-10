@@ -215,10 +215,8 @@ export async function createMitCharge(params: {
     mandate_data: {
       mandate_type: {
         multi_use: {
-          mandate_metadata: {
-            amount: params.amount,
-            currency: params.currency || 'USD',
-          },
+          amount: params.amount,
+          currency: params.currency || 'USD',
         },
       },
     },
@@ -250,6 +248,7 @@ export async function createSubscription(params: {
     customer_id: params.customerId,
     setup_future_usage: 'off_session',
     payment_link: true,
+    return_url: `${process.env.NEXT_PUBLIC_APP_URL || 'https://pay.newleaf.financial'}/portal?status=success`,
     payment_link_config: {
       branding_visibility: false,
       theme: '#10B981',
@@ -266,10 +265,8 @@ export async function createSubscription(params: {
       },
       mandate_type: {
         multi_use: {
-          mandate_metadata: {
-            amount: params.amount,
-            currency: params.currency || 'USD',
-          },
+          amount: params.amount,
+          currency: params.currency || 'USD',
         },
       },
     },
